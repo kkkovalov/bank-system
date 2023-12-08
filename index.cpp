@@ -4,7 +4,10 @@ void accessAccount(){
 
 };
 
-void openAccount(){
+void openAccount() { 
+    std::cout << "\t\tOpening an account!\n\n";
+    
+    return; 
 
 };
 
@@ -65,7 +68,8 @@ void initiateBanking() {
             std::cout << "Please try again!\nSelect an option: ";
             break;
         }
-    } while (validSelection);
+    } while (!validSelection);
+    std::cout << "end of initiation.\n";
 };
 
 int main() {
