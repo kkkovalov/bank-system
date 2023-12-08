@@ -6,13 +6,14 @@
 
 class Currency {
   public:
-    enum currencies {
+    enum {
         USD,
         CAD,
         GBP,
         UAH,
         EUR
     };
+    
 };
 
 #endif
