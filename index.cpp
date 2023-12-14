@@ -1,8 +1,4 @@
-#include <iostream>
-
-// Program-defined libraries
-#include "accounts.h"
-#include "currency.h"
+#include "header.h"
 
 void accessAccount(){
 
@@ -13,8 +9,8 @@ void openAccount() {
     std::cout << "Please enter your full name: ";
     std::string full_name{};
     std::getline(std::cin, full_name);
-    std::cout << "Select the type of the account:\n" std::cout
-              << "1 - Chequing\n";
+    std::cout << "Select the type of the account:\n";
+    std::cout << "1 - Chequing\n";
     std::cout << "2 - Savings\n";
     int selection{0};
     bool validSelection{false};
@@ -33,7 +29,7 @@ void openAccount() {
             std::cout << "Invalid input. Please try again!\n";
             break;
         }
-    } while () return;
+    } while (!validSelection);
 };
 
 void exitBank() {
