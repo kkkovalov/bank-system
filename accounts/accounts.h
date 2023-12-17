@@ -1,27 +1,32 @@
 #ifndef ACCOUNTS_H
 #define ACCOUNTS_H
 
-#include <iostream>
-#include <string>
-#include "randomuuid.h"
+#include "../header.h"
 
 namespace Accounts {
 
-class Account{
-    private:
-        uint32_t m_id{generate_random_id()};
-    public:
-        std::string m_name;
+// Function to generate a uniformly distributed number from 100,000,000 to
+// 999,999,999
+uint64_t generate_random_id();
 
-        Account(std::string_view name) : m_name{name}{
-            std::cout << "\nWelcome, " << m_name << "to the Bank of Kovalov!";
-        };
+class Account {
+  private:
+    uint64_t m_id{generate_random_id()};
 
-        uint32_t getId();
+  public:
+    std::string m_name;
+    Account() {
+        std::cout << "\nWelcome, Anonymous, to the Vank of Kovalov!\n";
+    };
+    Account(std::string_view name) : m_name{name} {
+        std::cout << "\nWelcome, " << m_name << ", to the Bank of Kovalov!\n";
+    };
+
+    uint64_t getId();
 };
 
 Account openChequingAccount();
-void openSavingsAccount();
+Account openSavingsAccount();
 
 void closeCurrentAccount();
 
