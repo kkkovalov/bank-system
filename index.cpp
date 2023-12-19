@@ -7,6 +7,8 @@ may be linked to your bank account. Thus allowing you to utilize bank in your da
     [ ] - Enter your account
     [ ] - Create new account
         [ ] - Handle name input and date of birth inputs
+        [ ] - Create an overload function to properly output the Account information
+            [ ] - create an overload <<operator for std::tm to output the data by format MM/DD/YYYY
     [ ] - Exit the bank
 [ ] - Account
     [ ] - Create an account class that hold all information

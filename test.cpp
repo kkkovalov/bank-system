@@ -1,8 +1,14 @@
 #include "header.h"
 
 int main() {
-    auto now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    std::tm currentYearTM = *std::localtime(&now);
-    int currentYear = currentYearTM.tm_year + 1900;
-    std::cout << "Year: " << currentYear;
+    std::istringstream ss("08/31/2003");
+    std::tm date = {};
+
+    // Parse the date string
+    ss >> std::get_time(&date, "%m/%d/%Y");
+    Accounts::Account newAcc{"Vladyslav Kovalov", date};
+
+    std::cout << "newAcc.id: " << newAcc.getId() << '\n';
+    std::cout << "newAcc.name: " << newAcc.getName() << '\n';
+    std::cout << "newAcc.date_of_birth: " << newAcc.getDateOfBirth() << '\n';
 };

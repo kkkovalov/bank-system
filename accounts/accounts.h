@@ -10,19 +10,24 @@ namespace Accounts {
 uint64_t generate_random_id();
 
 class Account {
-  private:
-    uint64_t m_id{generate_random_id()};
-
   public:
     std::string m_name;
-    Account() {
-        std::cout << "\nWelcome, Anonymous, to the Vank of Kovalov!\n";
-    };
-    Account(std::string_view name) : m_name{name} {
+
+  private:
+    uint64_t m_id{generate_random_id()};
+    std::tm m_date_of_birth{};
+
+  
+  public:
+    Account() { std::cout << "\nWelcome, Anonymous, to the Bank of Kovalov!\n"; };
+    Account(std::string name, std::tm date_of_birth)
+        : m_name{name}, m_date_of_birth{date_of_birth} {
         std::cout << "\nWelcome, " << m_name << ", to the Bank of Kovalov!\n";
     };
 
-    uint64_t getId();
+    uint64_t getId() const;
+    std::string getDateOfBirth() const;
+    std::string getName() const;
 };
 
 Account openChequingAccount();
