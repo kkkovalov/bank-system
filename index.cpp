@@ -103,11 +103,12 @@ void openAccount() {
         switch (selection) {
         case 1:
             validSelection = true;
-            // Accounts::openChequingAccount();
+            std::cout << Accounts::openChequingAccount(full_name, date_of_birth);
             break;
         case 2:
             validSelection = true;
-            // Accounts::openSavingsAccount();
+            std::cout << Accounts::openSavingsAccount();
+            break;
         default:
             std::cout << "Invalid input. Please try again!\n";
             break;
