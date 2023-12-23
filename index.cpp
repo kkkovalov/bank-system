@@ -4,15 +4,26 @@ Bank account encompasses a generic information, with no access to funds. Chequin
 may be linked to your bank account. Thus allowing you to utilize bank in your day-to-day activities.
 
 [ ] - Basic interaction with a bank
-    [ ] - Enter your account
-    [ ] - Create new account
-        [ ] - Handle name input and date of birth inputs
-        [ ] - Create an overload function to properly output the Account information
-            [ ] - create an overload <<operator for std::tm to output the data by format MM/DD/YYYY
-    [ ] - Exit the bank
+    [ ] - Enter your account (login)
+    [ ] - Create new account (sign up)
+        [x] - Handle name input and date of birth inputs
+        [x] - Create an overload function to properly output the Account information
+            [x] - create an overload <<operator for std::tm to output the data by format MM/DD/YYYY
+    [x] - Exit the bank (exit)
+
+[ ] - Saving the newly created account to MySQL database
+    [ ] - Create a database to hold values of the accounts
+    [ ] - Develop tables to access users of the bank
+    [ ] - Develop a table to hold transaction information
+
+[ ] - Transactions
+    [ ] - Create a class for transactions
+    [ ] - Define function to deposit
+    [ ] - Define function to withdraw
+    [ ] - Define function to transfer
 [ ] - Account
-    [ ] - Create an account class that hold all information
-    [ ] - Develop a randomly generating account numbers
+    [x] - Create an account class that hold all information
+    [x] - Develop a randomly generating account numbers
     [ ] - Class variable or derived class for Savings, Chequing account
     [ ] - Define functions for opening chequing and savings account
     [ ] - Implement function creation thru class constructor or as a separat entry.
