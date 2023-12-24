@@ -1,14 +1,9 @@
 #include "header.h"
 
 int main() {
-    std::istringstream ss("08/31/2003");
-    std::tm date = {};
+    Accounts::Account newReceiver{};
+    Accounts::Account newSender{};
+    Transactions::Transaction newTransaction{newSender.getId(), newReceiver.getId(), 100.12};
 
-    // Parse the date string
-    ss >> std::get_time(&date, "%m/%d/%Y");
-    Accounts::Account newAcc{"Vladyslav Kovalov", date};
-
-    std::cout << "newAcc.id: " << newAcc.getId() << '\n';
-    std::cout << "newAcc.name: " << newAcc.getName() << '\n';
-    std::cout << "newAcc.date_of_birth: " << newAcc.getDateOfBirth() << '\n';
+    std::cout << newTransaction;
 };

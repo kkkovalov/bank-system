@@ -13,5 +13,6 @@
 
 // Program-defined libraries
 #include "accounts/accounts.h"
+#include "transactions/transactions.h"
 
 #endif

@@ -1,6 +1,7 @@
 #include "accounts.h"
 
 // -------------------------GETTER functions for Accounts class-----------------------------------
+
 uint64_t Accounts::Account::getId() const { return m_id; };
 std::string Accounts::Account::getDateOfBirth() const { return m_date_of_birth; };
 std::string Accounts::Account::getName() const { return m_name; };

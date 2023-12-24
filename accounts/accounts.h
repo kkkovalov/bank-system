@@ -21,8 +21,7 @@ class Account {
 
   public:
     Account() { std::cout << "\nWelcome, Anonymous, to the Bank of Kovalov!\n"; };
-    Account(std::string name, std::string date_of_birth)
-        : m_name{name}, m_date_of_birth{date_of_birth} {
+    Account(std::string name, std::string date_of_birth) : m_name{name}, m_date_of_birth{date_of_birth} {
 
         // Convert date of birth to more accessible std::tm variable
         std::istringstream ss(date_of_birth);
@@ -31,10 +30,15 @@ class Account {
         std::cout << "\nWelcome, " << m_name << ", to the Bank of Kovalov!\n";
     };
 
-    friend std::ostream& operator<<(std::ostream &out, const Account &account);
+    friend std::ostream &operator<<(std::ostream &out, const Account &account);
 
+    // Getter function for Account class ID
     uint64_t getId() const;
+
+    // Getter function for Account class Date of Birth
     std::string getDateOfBirth() const;
+
+    // Getter function for Account class Name
     std::string getName() const;
 };
 
