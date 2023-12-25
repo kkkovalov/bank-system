@@ -17,8 +17,7 @@ may be linked to your bank account. Thus allowing you to utilize bank in your da
     [ ] - Develop a table to hold transaction information
 
 [ ] - Transactions
-    [ ] - Create a class for transactions
-    [ ] - Makes sure sender account has enough balance to make the transaction
+    [x] - Create a class for transaction
     [ ] - Verify that id's exist and are eligible for transaction
     [ ] - Define function to deposit
     [ ] - Define function to withdraw

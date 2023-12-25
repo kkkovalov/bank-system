@@ -16,6 +16,11 @@ std::string Transactions::generateRandomTransactionId() {
     return randomId;
 };
 
+bool verifyAccountId(uint64_t accountId) const{
+    // SQL Database look up for accountId
+};
+
+
 std::string Transactions::Transaction::getTimestampAsString() const{
     auto time = std::chrono::system_clock::to_time_t(m_timestamp);
     std::tm tm_time = *std::localtime(&time); // Convert to local time
