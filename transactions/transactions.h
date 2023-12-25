@@ -19,14 +19,24 @@ class Transaction {
 
     Transaction(const uint64_t sender_id, const uint64_t receiver_id, const double &amount)
         : m_sender_id{sender_id}, m_receiver_id{receiver_id}, m_amount{amount} {
+        // verify sender_id function
+        // verify receiver_id function
+        // verify balance of the sender function
 
+        // Generating a random transaction id
         std::srand(std::max(receiver_id, sender_id));
         m_id = generateRandomTransactionId();
+
+        // Generating a timestamp of the transaction
         m_timestamp = std::chrono::system_clock::now();
+
+        // To be removed latter
         std::cout << "Created a new transaction -> " << m_id << '\n';
     };
 
+    // Get timestamp of the transaction in string format "MM/DD/YYYY HH:MM:SS"
     std::string getTimestampAsString() const;
+
     friend std::ostream &operator<<(std::ostream &out, const Transaction &transaction);
 };
 
