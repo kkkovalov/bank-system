@@ -5,3 +5,8 @@ index.dSYM
 .
 ..
 ...
+
+
+*.sql
+
+*.out
