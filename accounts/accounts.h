@@ -2,20 +2,24 @@
 #define ACCOUNTS_H
 
 #include "../header.h"
+#include "../mysql/mysql.h"
 
 namespace Accounts {
 
 // Function to generate a uniformly distributed number from 100,000,000 to
 // 999,999,999
 uint64_t generate_random_id();
+
 void closeCurrentAccount();
+
 
 class Account {
   public:
     std::string m_name;
+    uint64_t m_id{generate_random_id()};
 
   private:
-    uint64_t m_id{generate_random_id()};
+    
     std::tm m_tm_date_of_birth{};
     std::string m_date_of_birth{};
 
@@ -28,8 +32,12 @@ class Account {
         std::istringstream ss(date_of_birth);
         ss >> std::get_time(&m_tm_date_of_birth, "%m/%d/%Y");
 
-        std::cout << "\nWelcome, " << m_name << ", to the Bank of Kovalov!\n";
+        bool result{mSQL::createAccount(m_id, m_name, m_tm_date_of_birth)};
+
+        std::cout << "\nWelcome, " << m_name << ", to the Bank of Kovalov!\n" <<"Created an account in DB:" << result << '\n';
     };
+
+    ~ Account() {};
 
     friend std::ostream& operator<<(std::ostream &out, const Account &account);
 
@@ -39,7 +47,7 @@ class Account {
 };
 
 Account openChequingAccount(std::string name, std::string dateOfBirth);
-Account openSavingsAccount();
+// Account openSavingsAccount(std::string name, std::string dateOfBirth);
 
 }; // namespace Accounts
 

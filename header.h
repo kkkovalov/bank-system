@@ -12,7 +12,7 @@
 #include <string>
 
 // Program-defined libraries
-#include "accounts/accounts.h"
 #include "mysql/mysql.h"
+#include "accounts/accounts.h"
 
 #endif

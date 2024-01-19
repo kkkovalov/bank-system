@@ -99,28 +99,30 @@ void openAccount() {
         std::cin.clear();
         std::cin >> date_of_birth;
     } while (!isValidDate(date_of_birth));
-    std::cout << "Select the type of the account:\n";
-    std::cout << "1 - Chequing\n";
-    std::cout << "2 - Savings\n";
-    int selection{0};
-    bool validSelection{false};
-    do {
-        std::cout << "Selected: ";
-        std::cin >> selection;
-        switch (selection) {
-        case 1:
-            validSelection = true;
-            std::cout << Accounts::openChequingAccount(full_name, date_of_birth);
-            break;
-        case 2:
-            validSelection = true;
-            std::cout << Accounts::openSavingsAccount();
-            break;
-        default:
-            std::cout << "Invalid input. Please try again!\n";
-            break;
-        }
-    } while (!validSelection);
+    // std::cout << "Select the type of the account:\n";
+    // std::cout << "1 - Chequing\n";
+    // std::cout << "2 - Savings\n";
+    // int selection{0};
+    // bool validSelection{false};
+    // do {
+    //     std::cout << "Selected: ";
+    //     std::cin >> selection;
+    //     switch (selection) {
+    //     case 1:
+    //         validSelection = true;
+    std::cout << Accounts::openChequingAccount(full_name, date_of_birth);
+    // break;
+    // case 2:
+    //     validSelection = true;
+    //     std::cout << Accounts::openSavingsAccount(full_name, date_of_birth);
+    //     break;
+    // default:
+    //     std::cout << "Invalid input. Please try again!\n";
+    //     break;
+    // }
+    // }
+    // while (!validSelection)
+    //     ;
 };
 
 void exitBank(const char &typeOfExit = 'R') {
