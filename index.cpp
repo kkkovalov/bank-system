@@ -16,7 +16,7 @@ may be linked to your bank account. Thus allowing you to utilize bank in your da
     [ ] - Create database to hold accounts and transactions for the bank
     [ ] - Create a user to interact as an admin with the database
     [ ] - Connect database to the program
-    
+
 [ ] - Account
     [ ] - Create an account class that hold all information
     [ ] - Develop a randomly generating account numbers
@@ -187,7 +187,6 @@ void initiateBanking() {
 };
 
 int main() {
-
     initiateBanking();
 
     return 0;

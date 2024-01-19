@@ -13,5 +13,6 @@
 
 // Program-defined libraries
 #include "accounts/accounts.h"
+#include "mysql/mysql.h"
 
 #endif
