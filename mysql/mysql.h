@@ -7,7 +7,8 @@
 #include <string>
 
 namespace mSQL {
-    
+
+    mysqlx::Session getSession(int argc, const char *argv[]);
 
 };
 
