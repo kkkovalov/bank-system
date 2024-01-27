@@ -38,8 +38,8 @@ may be linked to your bank account. Thus allowing you to utilize bank in your da
 // Forward function declaration
 void exitBank(const char &typeOfExit);
 
-void accessAccount(){
-
+void accessAccount(const uint64_t = 1, const verified = false){
+    
 };
 
 // Function to verify that date of birth is in format MM/DD/YYYY
@@ -110,7 +110,15 @@ void openAccount() {
     //     switch (selection) {
     //     case 1:
     //         validSelection = true;
-    std::cout << Accounts::openChequingAccount(full_name, date_of_birth);
+    try {
+        Accounts::openChequingAccount(full_name, date_of_birth);
+        // accessAccount(id, verified=true)
+    } catch() {
+        std::cout << "Error. Try later.";
+        exitBank();
+    }
+    
+
     // break;
     // case 2:
     //     validSelection = true;

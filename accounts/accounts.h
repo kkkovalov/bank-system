@@ -23,8 +23,15 @@ class Account {
     std::tm m_tm_date_of_birth{};
     std::string m_date_of_birth{};
 
+    double m_available_funds{0};
+    // double pending_inflow_funds{0};
+    // double pending_outflow_funds{0};
+    // double total_funds{0};
+    
+    // std::tm m_date_joined{};
+    
+
   public:
-    Account() { std::cout << "\nWelcome, Anonymous, to the Bank of Kovalov!\n"; };
     Account(std::string name, std::string date_of_birth)
         : m_name{name}, m_date_of_birth{date_of_birth} {
 
