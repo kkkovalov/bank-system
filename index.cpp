@@ -4,33 +4,16 @@ Bank account encompasses a generic information, with no access to funds. Chequin
 may be linked to your bank account. Thus allowing you to utilize bank in your day-to-day activities.
 
 [ ] - Basic interaction with a bank
-    [ ] - Enter your account
     [ ] - Create new account
-        [ ] - Handle name input and date of birth inputs
-        [ ] - Create an overload function to properly output the Account information
-            [ ] - create an overload <<operator for std::tm to output the data by format MM/DD/YYYY
+        [ ] -  see accounts.h for tasks
+
+    [ ] - Access existing account
+    [ ] - Transfer funds between two accounts
     [x] - Exit the bank
 
 
-[ ] - SQL Connection
-    [ ] - Create database to hold accounts and transactions for the bank
-    [ ] - Create a user to interact as an admin with the database
-    [ ] - Connect database to the program
-
-[ ] - Account
-    [ ] - Create an account class that hold all information
-    [ ] - Develop a randomly generating account numbers
-    [ ] - Class variable or derived class for Savings, Chequing account
-    [ ] - Define functions for opening chequing and savings account
-    [ ] - Implement function creation thru class constructor or as a separat entry.
-    [ ] - Create basic account handling
-    [ ] - Deposit money into the account
-        [ ] - Withdraw money from the account
-        [ ] - See balances
-        [ ] - See last transactions
-    [ ] - Close an account (cheq, sav)
-    [ ] - Terminate all accounts.
-
+[x] - SQL Connection
+    [x] - see mysql.h for implementation
 */
 
 #include "header.h"
@@ -38,8 +21,8 @@ may be linked to your bank account. Thus allowing you to utilize bank in your da
 // Forward function declaration
 void exitBank(const char &typeOfExit);
 
-void accessAccount(const uint64_t = 1, const verified = false){
-    
+void accessAccount(){
+
 };
 
 // Function to verify that date of birth is in format MM/DD/YYYY
@@ -48,7 +31,7 @@ bool isValidDate(const std::string &date_of_birth) {
     std::tm date = {};
 
     // Parse the date string
-    ss >> std::get_time(&date, "%m/%d/%Y");
+    ss >> std::get_time(&date, "%Y/%m/%d");
 
     if (ss.fail()) {
         std::cerr << "Invalid date format. Please try again.\n";
@@ -95,7 +78,7 @@ void openAccount() {
     std::getline(std::cin, full_name);
     std::string date_of_birth{};
     do {
-        std::cout << "Enter your date of birth in format MM/DD/YYYY: ";
+        std::cout << "Enter your date of birth in format YYYY/MM/DD: ";
         std::cin.clear();
         std::cin >> date_of_birth;
     } while (!isValidDate(date_of_birth));
@@ -110,15 +93,8 @@ void openAccount() {
     //     switch (selection) {
     //     case 1:
     //         validSelection = true;
-    try {
         Accounts::openChequingAccount(full_name, date_of_birth);
-        // accessAccount(id, verified=true)
-    } catch() {
-        std::cout << "Error. Try later.";
-        exitBank();
-    }
-    
-
+        // accessAccount(id, verified=true;
     // break;
     // case 2:
     //     validSelection = true;
@@ -162,8 +138,7 @@ void exitBank(const char &typeOfExit = 'R') {
 };
 
 void initiateBanking() {
-    std::cout << "\n\t\tWelcome to the Bank of Kovalov!\n\nWe are here to assist "
-                 "you with everyday banking.\n";
+    std::cout << "\n\t\tWelcome to the Bank of Kovalov!\n\nWe are here to assist you with everyday banking.\n";
     std::cout << "Select from options below:\n\n";
     std::cout << "1 - Enter my account.\n";
     std::cout << "2 - Open a new account.\n";

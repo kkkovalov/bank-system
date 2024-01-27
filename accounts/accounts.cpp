@@ -32,3 +32,8 @@ Accounts::Account Accounts::openChequingAccount(std::string name, std::string da
 //     Account newSavingsAccount{};
 //     return newSavingsAccount;
 // };
+
+void Accounts::Account::addFunds(double funds){
+    m_available_funds = mSQL::depositFunds(m_id, funds);
+    std::cout << "Money deposited: " << funds << '\n';
+};
