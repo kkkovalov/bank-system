@@ -31,14 +31,14 @@ void mSQL::createAccount(uint64_t id, std::string name, std::tm date_of_birth) {
     std::cout << "Success! Welcome to the Bank of Kovalov, " + name + "\n";
 };
 
-Column mSQL::depositFunds(uint64_t id, double deposit_amount) {
+double mSQL::depositFunds(uint64_t id, double deposit_amount) {
     Table accounts{mSQL::getAccountsTable()};
-    std::string where_id = "id=" + id;
-    RowResult row = accounts.select().where(where_id).execute();
-    Column current_funds = row.getColumn(4);
+    std::string where_id = "id=" + std::to_string(id);
+    RowResult row = accounts.select("funds").where(where_id).execute();
+    double current_funds = row.fetchOne().get(0).get<double>();
     // current_funds += deposit_amount;
     // accounts.update().set("funds", current_funds).where(where_id).execute();
-    return current_funds;
+    return current_funds + deposit_amount;
 };
 
 double mSQL::withdrawFunds(uint64_t id, double withdraw_amount){
